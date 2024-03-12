@@ -53,12 +53,6 @@ Open [http://localhost:3000](http://localhost:3000)
 | Black | ![#212429](https://via.placeholder.com/10/212429?text=+) #212429 |
 
 
-## Authors
-
-- [Ajibola Ojo](https://www.github.com/jbrit)
-- [Elijah Soladoye](https://www.github.com/showdow96)
-- [Iykee](https://github.com/iyke4life)
-- [Ibitola Mayowa](https://www.linkedin.com/in/ibitolamayowa/)
 
 
 
