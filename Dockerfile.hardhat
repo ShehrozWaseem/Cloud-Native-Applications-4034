@@ -1,0 +1,17 @@
+# Dockerfile for Hardhat deployment script
+FROM node:18.12.0 AS builder
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json package-lock.json ./
+RUN npm install hardhat @nomiclabs/hardhat-ethers ethers
+
+# Copy only the necessary files for Hardhat deployment
+COPY contracts ./contracts
+COPY scripts ./scripts
+COPY hardhat.config.js .
+
+# Command to compile contracts
+CMD ["npx","hardhat","compile"]
+# Command to run Hardhat deployment script
+CMD ["npx", "hardhat", "run", "scripts/deploy.js", "--network", "mumbai"]

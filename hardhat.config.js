@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require('dotenv').config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -7,6 +8,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
   for (const account of accounts) {
     console.log(account.address);
+    
   }
 });
 
@@ -16,17 +18,14 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const privateKey = "c72b6985f3f9c45c8ed3e9fe139cd78435d698ff4b4138e6dbc0b736bbbe1d64";
+console.log(process.env.PRIVATE_KEY)
+const privateKey = process.env.PRIVATE_KEY;
 module.exports = {
   solidity: "0.8.4",
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 1337,
-    },
-    harmonytestnet: {
-      url: `https://api.s0.b.hmny.io`,
-      accounts: [privateKey]
     },
     mumbai: {
       url: "https://rpc-mumbai.maticvigil.com/",
@@ -35,3 +34,7 @@ module.exports = {
     },
   },
 };
+
+
+// const privateKey = process.env.PRIVATE_KEY;
+

@@ -10,6 +10,7 @@ import { useQuery } from "react-query";
 import { structurePolls } from "../components/Utils";
 
 function PollHistory() {
+  console.log(process.env.PRIVATE_KEY)
   const voting = useVoting({});
   const { data: pollData, isLoading: pageLoading } = useQuery(
     "polls",

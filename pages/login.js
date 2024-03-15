@@ -57,7 +57,7 @@ function Login() {
   return (
     <>
       <Head>
-        <title>Voting DAPP | Login</title>
+        <title>DxVote App | Login</title>
       </Head>
       <div className="grid xl:grid-cols-2 gap-40 pt-24 px-32">
         <div className="pb-10 xl:px-10 mx-auto  pt-56">
@@ -70,7 +70,7 @@ function Login() {
             <div className="card">
               <Image src={logo} width={150} height={150} alt="" />
               <h1 className="text-primary text-4xl">
-                <b>Votechain</b>
+                <b>DxVote</b>
               </h1>
               <div className="mt-10">
                 <label>Network: </label>

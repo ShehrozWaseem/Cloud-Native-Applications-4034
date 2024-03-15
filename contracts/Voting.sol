@@ -6,6 +6,7 @@ contract Voting {
     struct VoteOption{
         string name;
         uint count;
+        string all;
     }
     struct Poll {
         address owner;

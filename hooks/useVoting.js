@@ -3,11 +3,14 @@ import { useContext } from "react";
 import Web3Modal from "web3modal";
 import Voting from "../artifacts/contracts/Voting.sol/Voting.json";
 import { appDetailsContext } from "../context/AppDetails";
+import addressJSON from '../address/address.json'
+
 
 const getUrl = (chainId) => {
   switch (chainId) {
     case 80001:
       return "https://rpc-mumbai.maticvigil.com/";
+      // return "https://polygon-mumbai-bor-rpc.publicnode.com/";
     case 1666700000:
       return "https://api.s0.b.hmny.io";
     default:
@@ -16,10 +19,12 @@ const getUrl = (chainId) => {
 };
 
 const getContractAddress = (chainId) => {
+// Specify the file path to read from
+  console.log(addressJSON?.address,addressJSON?.address)
   console.log(chainId)
   switch (chainId) {
     case 80001:
-      return "0x09949232669E65667b6b88CF54E03BA31433ad89";
+      return addressJSON?.address;
     case 1666700000:
       return "0xEEF20045d1CC0A94D6D4Ee02dbB677FfFE45D9B9";
     default:
