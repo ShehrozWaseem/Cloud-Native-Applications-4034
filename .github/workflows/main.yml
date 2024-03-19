@@ -12,14 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Log in to ghcr.io
-        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      # - name: Log in to ghcr.io
+      #   run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Build and tag image
-        run: docker build -t ghcr.io/shehrozwaseem/next-app:latest -f Dockerfile .    
+      # - name: Build and tag image
+      #   run: docker build -t ghcr.io/shehrozwaseem/next-app:latest -f Dockerfile .    
 
-      - name: Push image to GHCR
-        run: docker push ghcr.io/shehrozwaseem/next-app:latest
+      # - name: Push image to GHCR
+      #   run: docker push ghcr.io/shehrozwaseem/next-app:latest
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
